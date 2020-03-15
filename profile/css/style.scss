@@ -1,0 +1,52 @@
+// imports
+// variaveis
+$cor-neutra: #ddd;
+$cor-janela: #f5f5f6;
+$bg-color: #364f6b;
+
+// mixins
+@mixin flex-centered() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// encadeamentos
+
+body {
+    background-color: $bg-color;
+
+    .container {
+        @include flex-centered();
+        padding: 30px;
+
+        .jumbotron {
+            @include flex-centered();
+            flex-direction: column;
+            background-color: $cor-janela;
+
+            .imgProfile {
+                height: 150px;
+                width: 150px;
+                border-radius: 100%;
+                margin-bottom: 30px;
+                background-color: $cor-neutra;
+                @include flex-centered();
+
+                i {
+                    font-size: 4rem;
+                }
+            }
+
+            .container-sm {
+                h1 {
+                    text-align: center;
+                }
+
+                .lead {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

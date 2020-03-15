@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dados pessoais</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container" id="app-profile">
+        <div class="jumbotron">
+            <div class="imgProfile">
+                <i class="fa fa-file-image-o" aria-hidden="true"></i>
+            </div>
+            <div class="container-sm">
+                <h1>{{this.textoDigitado}}</h1>
+                <p class="lead">
+                    {{this.tituloDigitado}}
+                </p>
+                <hr />
+                <div class="form-group">
+                    <!-- Nome -->
+                    <label for="inNome">Nome completo:</label>
+                    <input type="text" class="form-control" v-model="textoDigitado" name="nome" id="inNome"
+                        aria-describedby="helpId" placeholder="Ricardo de Paula Silva">
+                    <small id="helpId" class="form-text text-muted">Insira o nome completo</small>
+                    <div class="alert alert-warning" role="alert" v-if="this.textoDigitado.length <= 0">
+                        <strong>Campo nome vazio</strong>
+                    </div>
+                    <!-- Título -->
+                    <label for="inTitle">Título:</label>
+                    <input type="text" class="form-control" name="title" v-model="tituloDigitado" id="inTitle"
+                        aria-describedby="helpId" placeholder="Desenvolvedor Front-End">
+                    <small id="helpId" class="form-text text-muted">Insira um título. exemplo: designer, dev
+                        front-end...</small>
+                    <div class="alert alert-warning" role="alert" v-if="this.tituloDigitado.length <= 0">
+                        <strong>Campo título vazio</strong>
+                    </div>
+                    <!-- email -->
+                    <label for="inEmail">E-mail:</label>
+                    <input type="text" class="form-control" name="email" v-model="emailDigitado" id="inEmail"
+                        aria-describedby="helpId" placeholder="ricardodepaulasilva@gmail.com">
+                    <small id="helpId" class="form-text text-muted">Insira um e-mail válido</small>
+                    <div class="alert alert-danger" role="alert" v-if="this.emailDigitado.indexOf('@') < 0">
+                        <strong>E-mail inválido</strong>
+                    </div>
+                    <!-- telefone -->
+                    <label for="inTelefone">Telefone:</label>
+                    <input type="text" class="form-control" name="email" v-model="telefoneDigitado" id="inTelefone"
+                        aria-describedby="helpId" placeholder="(xx) xxxxx-xxxx">
+                    <small id="helpId" class="form-text text-muted">Insira um telefone válido</small>
+                    <div class="alert alert-danger" role="alert" v-if="this.telefoneDigitado.length < 9">
+                        <strong>Telefone inválido</strong>
+                    </div>
+                    <button class="btn btn-primary" style="float: right;">Salvar</button>
+                    <button class="btn btn-outline-dark" style="float: right; margin-right: 12px;">Cancelar</button>
+                </div>
+            </div>
+            <br>
+            <center>
+                <small>{{'Seja bem-vindo ' + this.textoDigitado + ' ' + 'Confira seus dados:'}}<br><b>{{'Nome: ' + this.textoDigitado + ' ' + 'Titulo: ' + this.tituloDigitado + ' ' + 'E-mail: ' + this.emailDigitado + ' ' + 'Telefone: ' + this.telefoneDigitado}}</b></small>
+            </center>
+        </div>
+    </div>
+    <!-- Vue raíz -->
+    <script>
+        new Vue({
+            el: "#app-profile",
+            data: {
+                textoDigitado: "",
+                tituloDigitado: "",
+                emailDigitado: "",
+                telefoneDigitado: "",
+            },
+            methods: {}
+        });
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS and VueJs -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

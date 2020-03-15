@@ -1,0 +1,30 @@
+body {
+  background-color: #364f6b; }
+  body .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; }
+    body .container .jumbotron {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #f5f5f6; }
+      body .container .jumbotron .imgProfile {
+        height: 150px;
+        width: 150px;
+        border-radius: 100%;
+        margin-bottom: 30px;
+        background-color: #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        body .container .jumbotron .imgProfile i {
+          font-size: 4rem; }
+      body .container .jumbotron .container-sm h1 {
+        text-align: center; }
+      body .container .jumbotron .container-sm .lead {
+        text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
